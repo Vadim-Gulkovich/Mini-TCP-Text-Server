@@ -1,33 +1,39 @@
-Mini TCP Text Server
+# Mini TCP Text Server
 
-A simple Java client–server application demonstrating basic TCP socket communication.
-The server accepts multiple clients and processes text commands over the network.
+A simple Java client–server application demonstrating basic TCP socket communication. The server accepts multiple clients and processes text commands over the network.
 
-Features:
+## Features
 
-Configurable Port: The server can run on any port specified as a command-line argument.
-Network Communication: The client connects to the server using IP and port read from a config.txt file.
+- **Configurable Port:** The server can run on any port specified as a command-line argument.  
+- **Network Communication:** The client connects to the server using IP and port read from a `config.txt` file.  
 
-Supported Commands:
+### Supported Commands
 
-STATS <text> — returns text statistics (number of lowercase, uppercase, digits, and other characters).
-ANAGRAM <text> — returns a shuffled (anagram) version of the input text.
-DROP — closes the connection with the server.
-EXIT — closes the client locally.
+- `STATS <text>` — returns text statistics (number of lowercase, uppercase, digits, and other characters).  
+- `ANAGRAM <text>` — returns a shuffled (anagram) version of the input text.  
+- `DROP` — closes the connection with the server.  
+- `EXIT` — closes the client locally.  
 
-Multithreaded Server: Handles multiple clients simultaneously.
+- **Multithreaded Server:** Handles multiple clients simultaneously.
 
-How to Run:
-1 Compile both files:  
-    javac TCPServer.java TCPClient.java
-2 Run the server:
+## How to Run
+
+1. Compile both files:  
+   ```bash
+   javac TCPServer.java TCPClient.java
+
+2. Run the server:
+    ```bash
     java TCPServer 5000
-3 Create a file named config.txt: 
+3. Create a file named config.txt: 
+    ```bash
     127.0.0.1
     5000
-4 Run the client:   
+4. Run the client:  
+    ```bash
     java TCPClient
-5 Type commands such as:
+5. Type commands such as:
+   ```bash
     STATS Hello123!
     ANAGRAM Hello
     DROP
